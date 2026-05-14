@@ -59,5 +59,8 @@ markdown_extensions:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
 
+nav:
+  - Home: index.md
+  - PPTX: pptx.md
 copyright: |
   &copy; 2023 <a href="https://github.com/james-willett"  target="_blank" rel="noopener">Ashish Bindra</a>
