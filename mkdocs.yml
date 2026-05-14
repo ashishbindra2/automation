@@ -20,14 +20,14 @@ theme:
       toggle:
         icon: material/toggle-switch-off-outline 
         name: Switch to dark mode
-      primary: red
-      accent: purple 
+      primary: deep orange
+      accent: indigo 
     - scheme: slate 
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode    
-      primary: red
-      accent: lime
+      primary: deep orange
+      accent: indigo
 
 plugins:
   - social
