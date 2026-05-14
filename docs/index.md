@@ -1,103 +1,118 @@
-# API
+# ⚙️ Python Automation Scripts — Advanced Tutorials
 
-Aplication programing Interface is a set of rules and protocols that allow one software application to interact with another.
+> **A comprehensive collection of production-grade automation scripts** covering file systems, web scraping, browser automation, Excel/CSV processing, email, scheduling, APIs, and more.
 
-- APIs are used to define the methods for communication between software components
-
-## Brusup
-
-You send a request to a server, and it send back a response. but APIs can do much more than that. THey can be used to create new APIs, to modify exisitng APIs and to integrate APis with other APIs.Most of the time that you practice is just `data picking` from APIs or `loop`through the data. But APIs can do much more than that.At a max level, you went through the basic of sate menagment.
-
-> Beyond random user and github API
-
-### step 1: http methods
-
-Master the HTTP method. You should know the difference between GET,PUT,POST,PATCh,DELETE and OPTIONS.
-
-- You SHould know when to use each method and what each method does.
-- you should also know how to use thrse method in yur code
-
-> GO to FreeAPi Kiten sink and learn to handel all http methods.Try them with different tools  like fetch, postman,axios,etc.
-
-### step2: Status code and request handers
-
-- You should know what status codes are and what they mean.
-- you should know to handel different status codes un your code.
-- You should also know how to request headers.
-- you should also know what headers are and what they do.
--Know how to set headers in your code.
-- learn things like
-  - request header
-  - request ip
-  - request user agent
-  - path variable
-  - query parameters
-
-### Step 3: Response handling
-
-You should know how to handle respinses.
-
-- do you how to handle different types of responses?
-- You should know how to handle JSON,XML and other types of responses.
-- You should know how to handle different types of error.
-you should know how to handle diferent types of responses un your code like
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+[![Author](https://img.shields.io/badge/Author-Ashish%20Bindra-blue?style=for-the-badge&logo=github)](https://github.com/ashishbindra2)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin)](https://in.linkedin.com/in/ashishbindra2)
 
 ---
 
-- responses headers
-- response caching
-- response compression (gzip, brotli, etc)
-- response cookies
-- redirect handling
-- Handling Images: Manage image responses in various formats (JPEG, PNG, etc.).
 
-### Step 4: Authentication
+## 0. PPTX Automation Tool
 
-You should know how to authenticate with APIs. You should know different types of authencation methods.
+## 🗂️ 1. File & Folder Automation
 
-- You should know how to authentication in your code. Learn things like
+> Automate repetitive file management tasks — renaming, organizing, deduplication, and backups.
 
-- Baic authtication
-- Beare token
-- OAuth
-- JWT
-- API keys
-- cookies
-- session
-- token
-- refresh token
+## 🌐 2. Web Scraping
 
-> You should need to learn about mobile authentication and Api handling different from web.
-> THis is completely a bous step.
+> Extract structured data from any website — static pages, paginated results, and JSON APIs.
 
-### step 5: API Rate Linmiting (Optional)
+## 🖥️ 3. Browser Automation (Selenium / Playwright)
 
-You should know how to rate limit APIs.
+> Automate real browser interactions — logins, form fills, screenshots, and scraping JS-heavy sites.
 
-- You should know how too handle in ypur code. You should know hw to handle rate limiting in your Api like
-- Rate limiting
-- Throttling
-- Caching
-- Retry
-- Circuit breaker
-- Backoff
-- Timeout
-- Error handling
+## 📊 4. Excel & CSV Automation
 
-### step 6: Bonous learning
+> Generate reports, clean messy data, merge sheets, and build ETL pipelines with Pandas and openpyxl.
 
-You are done btnow/
+## 📧 5. Email Automation
 
-- Webhooks
-- websockets
-- GraphQl
-- gRPC
-- Rest
-- SOAP
+> Send plain text, HTML emails, and bulk campaigns with attachments via SMTP.
 
-### Tools to handle APIS
+## ⏰ 6. Task Scheduling
 
-- Axios
-- Fetch
-- Postman
-- React Query
+> Schedule Python scripts to run at specific times — daily reports, hourly backups, cron-style jobs.
+
+## 🔌 7. API Automation
+
+> Automate REST API workflows — GitHub, Sheets, Slack, webhooks, and custom APIs.
+
+**Example — GitHub API: Auto-create Issue:**
+
+```python
+import requests
+
+TOKEN = "your_github_token"
+REPO  = "ashishbindra2/automation"
+
+def create_issue(title, body, labels=None):
+    url = f"https://api.github.com/repos/{REPO}/issues"
+    headers = {"Authorization": f"token {TOKEN}"}
+    data = {"title": title, "body": body, "labels": labels or []}
+    r = requests.post(url, json=data, headers=headers)
+    print(f"Issue created: {r.json()['html_url']}")
+
+create_issue("Bug: Script fails on Windows", "Traceback...", ["bug"])
+```
+
+---
+
+**Example — Kill process by name:**
+
+```python
+import psutil
+
+def kill_process(name):
+    for proc in psutil.process_iter(["name", "pid"]):
+        if proc.info["name"] == name:
+            proc.kill()
+            print(f"Killed {name} (PID {proc.info['pid']})")
+
+kill_process("chrome.exe")
+```
+
+---
+
+### Environment Variables
+
+Create a `.env` file in the root:
+
+```env
+EMAIL_USER=your@gmail.com
+EMAIL_PASS=your_app_password
+GITHUB_TOKEN=ghp_xxxxxxxxxxxx
+```
+
+Load in any script with:
+
+```python
+from dotenv import load_dotenv
+import os
+load_dotenv()
+EMAIL_USER = os.getenv("EMAIL_USER")
+```
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome! For major changes, open an issue first.
+
+1. Fork the repo
+2. Create your feature branch: `git checkout -b feature/new-script`
+3. Commit: `git commit -m "Add: new automation script"`
+4. Push: `git push origin feature/new-script`
+5. Open a Pull Request
+
+---
+
+<div align="center">
+
+Made with ❤️ by [Ashish Bindra](https://github.com/ashishbindra2) · [LinkedIn](https://in.linkedin.com/in/ashishbindra2) · [Twitter](https://twitter.com/bindra_ashish)
+
+⭐ **Star this repo** if it helped you!
+
+</div>

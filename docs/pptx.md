@@ -23,7 +23,7 @@ A presentation can have more than one slide master and each master will have its
 
 ### To add the specfic layout
 
-![alt text](image.png)
+![add layout image](img/image.png)
 
 ```py
 lys = prs.slide_layouts[0]
@@ -75,7 +75,7 @@ prs.save('./ppt_file/eg3.pptx')
 
 > these boxes are placeholders
 
-![alt text](image-1.png)
+![alt text](img/image-1.png)
 
 ### placeholders eg
 
@@ -138,7 +138,7 @@ if slide_second_body.has_text_frame:
     tf.text = '23123213'
 ```
 
-![alt text](image-2.png)
+![alt text](img/image-2.png)
 
 ### add more Bullets points
 
@@ -158,7 +158,7 @@ p1 = tf.add_paragraph()
 p1.text = "3"
 ```
 
-![alt text](image-3.png)
+![alt text](img/image-3.png)
 
 ### add nested
 
@@ -229,7 +229,7 @@ prs.save("./ppt_file/eg8.pptx")
 
 Output:
 
-![alt text](image-4.png)
+![alt text](img/image-4.png)
 
 ### change the text box posistion
 
@@ -244,7 +244,7 @@ txt_frm.text = "text box example"
 
 ```
 
-![alt text](image-5.png)
+![alt text](img/image-5.png)
 
 ### Inches
 
@@ -285,14 +285,14 @@ prs.save("./ppt_file/eg9.pptx")
 ```
 
 Output
-![alt text](image-6.png)
+![alt text](img/image-6.png)
 
 ## add_shape()
 
 5th layout which is title only
-![alt text](image-7.png)
+![alt text](img/image-7.png)
 
-![alt text](image-8.png)
+![alt text](img/image-8.png)
 
 ## center the shape
 
@@ -306,7 +306,7 @@ shape_Mso_sh = shapes.add_shape(MSO_SHAPE.PENTAGON, left, top, width, height)
 prs.save("./ppt_file/eg10.pptx")
 ```
 
-![alt text](image-9.png)
+![alt text](img/image-9.png)
 
 ### all shape of MSO_SHAPE
 
@@ -353,7 +353,7 @@ for n in range(2, 6):
 prs.save(f"./ppt_file/eg11.pptx")
 ```
 
-![alt text](image-10.png)
+![alt text](img/image-10.png)
 
 ## add_table
 
@@ -382,7 +382,7 @@ table.cell(1, 1).text = 'Qux'
 prs.save(f"./ppt_file/eg12.pptx")
 ```
 
-![alt text](image-11.png)
+![alt text](img/image-11.png)
 
 ## Extract all text from slides in presentation¶
 
